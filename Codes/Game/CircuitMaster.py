@@ -1,5 +1,4 @@
 #Quantum Board
-
 # Contributed by : @Guna
 from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister, execute, Aer
 number_of_moves=10
@@ -38,6 +37,7 @@ simulator = Aer.get_backend('qasm_simulator')
 job = execute(quantum_board, simulator, shots=1)
 result = job.result()
 
+print(result)
 # Retrieve and interpret the final state to determine the winner and final positions
 final_coin_states = result.get_counts(quantum_board)
 final_player_positions = result.get_counts(quantum_board)
